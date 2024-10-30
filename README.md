@@ -1,2 +1,2 @@
-# AI_ML_Intern_Assignments
-AI ML Intern Assignments Submissions
+# AI/ML Intern Assignments Submissions | Chhirolya Technologies
+
