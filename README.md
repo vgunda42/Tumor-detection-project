@@ -1,4 +1,4 @@
-# AI/ML Intern Candidate Project Submissions | Chhirolya Technologies
+# AI/ML Intern Candidate Assignment Project Submissions | Chhirolya Technologies
 
 Welcome to the **AI/ML Project Submission Repository**! This repository is dedicated to collecting and reviewing project submissions for candidates interested in AI and ML roles. Please follow the instructions below to ensure a smooth and organized submission process.
 
