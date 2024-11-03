@@ -1,15 +1,12 @@
 import sys
 import os
-
 from src.exception import CustomException
 from src.logger import logging
 from src.utils import save_object
-
 from dataclasses import dataclass
 import numpy as np 
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
-
 
 @dataclass
 class DataTransformationConfig:
@@ -53,12 +50,18 @@ class DataTransformation:
                 obj=self.label_encoder
             )
 
+            # Retrieve class mapping
+            class_mapping = self.label_encoder.classes_
+            logging.info(f"Classes mapping: {class_mapping}")
+
             return (
                 train_arr,
                 test_arr,
                 self.data_transformation_config.preprocessor_obj_file_path,
+                class_mapping  
             )
         
         except Exception as e:
             raise CustomException(e, sys)
+
 
