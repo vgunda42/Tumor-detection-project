@@ -53,7 +53,7 @@ patient-treatment-predictor/
 ```
 
 ## 📉 Output
-![Prediction]()
+![Prediction](Santhosh_Kumar_Treatment_Duration_Predictor/Project.png)
 
 ## 👨‍🏫 Reference
 * [Python Documentation](https://docs.python.org/3/)
