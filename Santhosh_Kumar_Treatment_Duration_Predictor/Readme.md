@@ -42,7 +42,7 @@ The application is deployed and available on Hugging Face Spaces:
 
 ## 📁 Project Structure
 ```
-patient-treatment-predictor/
+Santhosh_Kumar_Treatment_Duration_Predictor/
 ├── app.py                     # Streamlit application
 ├── model.ipynb                # Model training script
 ├── requirements.txt           # Project dependencies
