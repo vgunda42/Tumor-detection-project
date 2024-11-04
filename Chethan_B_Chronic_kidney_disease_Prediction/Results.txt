@@ -1,0 +1,38 @@
+CKD Streamlit Application Features :
+
+User Interface for Feature Input:
+The app provides input fields for users to enter patient data (e.g., age, blood pressure, specific gravity, hemoglobin).
+Both numerical (e.g., age, blood pressure) and categorical (e.g., Red Blood Cells, Appetite) data inputs are included.
+Categorical inputs are converted to numerical values to align with the model’s requirements.
+Prediction Output:
+
+Once the user fills in all required fields and clicks the "Predict" button, the model processes this data and predicts whether the patient is at risk for CKD.
+The prediction output is displayed as either:
+"Predicted Class: Chronic Kidney Disease" if the patient is at risk.
+"Predicted Class: No Chronic Kidney Disease" if the patient is likely healthy.
+Technical Workflow
+Data Preprocessing:
+
+The application includes a preprocessing pipeline that prepares patient input data, including scaling numerical features and encoding categorical features.
+Model Usage:
+
+A trained Random Forest classifier model is loaded, and the application uses it to predict the likelihood of CKD based on patient input.
+Deployment with ngrok:
+
+Using pyngrok, a public URL is generated, allowing the Streamlit app to be accessed remotely. This feature is especially useful for sharing the app without needing a dedicated server.
+Sample Result Flow
+User Input:
+
+For example, a user inputs data for a patient with the following:
+Age: 45, Blood Pressure: 80, Hemoglobin: 11.0, Appetite: Good, etc.
+Model Prediction:
+
+The model processes the input data and returns the result:
+If the patient shows significant indicators of CKD, the app might display: "Predicted Class: Chronic Kidney Disease".
+Otherwise, it would display: "Predicted Class: No Chronic Kidney Disease".
+Feedback:
+
+The application provides a success message after each prediction, making it easy for healthcare providers to interpret the results and take necessary steps for the patient.
+Insights from Prediction
+This application allows healthcare professionals or patients to make informed decisions based on the risk level for CKD.
+By including a wide range of health metrics, the model can offer a nuanced prediction, supporting early intervention where necessary.
