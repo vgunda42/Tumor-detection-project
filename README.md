@@ -1,3 +1,4 @@
+ main
 Stroke Prediction Model
 A machine learning project that uses patient data to predict the likelihood of a stroke. This application leverages a trained model with a Streamlit interface, allowing users to input health-related data and receive predictions in real-time.
 
@@ -77,3 +78,5 @@ Pandas: For data handling
 
 # Contribution
 Contributions are welcome! Please fork this repository and submit a pull request with your changes.
+
+main
