@@ -1,4 +1,3 @@
-```markdown
 # Medicine Recommendation System
 
 ## Overview
@@ -63,4 +62,3 @@ This will start the web server, and you can access the application in your web b
 
 For any queries or further information, feel free to reach out via email at [2310sathishkumarsk@gmail.com](mailto:2310sathishkumarsk@gmail.com).
 
-```
