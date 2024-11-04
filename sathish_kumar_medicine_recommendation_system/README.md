@@ -19,20 +19,6 @@ The Medicine Recommendation System is an AI-driven application designed to assis
 - **Machine Learning**: Utilized to predict diseases based on symptoms.
 - **Flask** or **Streamlit**: For developing the web application interface.
 
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd medicine-recommendation-system
-   ```
-3. Install the required packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
 ## Data
 The application uses several datasets to provide accurate recommendations:
 - `symptoms_df.csv`: Contains a list of symptoms and corresponding diseases.
@@ -43,13 +29,6 @@ The application uses several datasets to provide accurate recommendations:
 - `description.csv`: Provides detailed descriptions of each disease.
 
 Ensure the datasets are located in the `/data` directory as specified in the code.
-
-## Usage
-To run the application, execute the following command in your terminal:
-```bash
-python app.py
-```
-This will start the web server, and you can access the application in your web browser at `http://localhost:5000` (or the port specified).
 
 ### Example
 1. Input your symptoms in the designated field.
