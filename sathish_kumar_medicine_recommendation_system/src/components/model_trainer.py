@@ -1,5 +1,6 @@
 import os
 import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from dataclasses import dataclass
 
 from sklearn.ensemble import (
@@ -14,10 +15,10 @@ from sklearn.tree import DecisionTreeClassifier
 from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score
 
-from src.exception import CustomException
-from src.logger import logging
+from exception import CustomException
+from logger import logging
 
-from src.utils import save_object, evaluate_models
+from utils import save_object, evaluate_models
 
 @dataclass
 class ModelTrainerConfig:
@@ -38,57 +39,62 @@ class ModelTrainer:
             )
             
             models = {
+                "SVM": SVC(),
                 "Random Forest": RandomForestClassifier(),
                 "Decision Tree": DecisionTreeClassifier(),
                 "Gradient Boosting": GradientBoostingClassifier(),
                 "Logistic Regression": LogisticRegression(),
                 "XGBClassifier": XGBClassifier(),
-                "SVM": SVC(),
                 "KNeighbors": KNeighborsClassifier(),
                 "MultinomialNB": MultinomialNB()
             }
 
-            params = {
-                "Decision Tree": {
-                    'criterion': ['gini', 'entropy'],
-                    'splitter': ['best', 'random'],
-                    'max_depth': [None, 10, 20, 30],
-                },
-                "Random Forest": {
-                    'n_estimators': [50, 100, 150],
-                    'max_depth': [None, 10, 20, 30],
-                },
-                "Gradient Boosting": {
-                    'learning_rate': [0.1, 0.01, 0.05],
-                    'n_estimators': [50, 100, 150],
-                },
-                "Logistic Regression": {
-                    'C': [0.1, 1, 10],
-                    'penalty': ['l2'],
-                    'solver': ['lbfgs', 'liblinear'],
-                },
-                "XGBClassifier": {
-                    'learning_rate': [0.1, 0.01, 0.05],
-                    'n_estimators': [50, 100, 150],
-                    'max_depth': [3, 5, 7],
-                },
-                "SVM": {
-                    'C': [0.1, 1, 10],
-                    'kernel': ['linear', 'rbf'],
-                    'gamma': ['scale', 'auto']
-                },
-                "KNeighbors": {
-                    'n_neighbors': [3, 5, 7, 9],
-                    'weights': ['uniform', 'distance']
-                },
-                "MultinomialNB": {
-                    'alpha': [0.1, 0.5, 1.0]  
-                }
-            }
+            # params = {
+            #     "Decision Tree": {
+            #         'criterion': ['gini', 'entropy'],
+            #         'splitter': ['best', 'random'],
+            #         'max_depth': [None, 10, 20, 30],
+            #     },
+            #     "Random Forest": {
+            #         'n_estimators': [50, 100, 150],
+            #         'max_depth': [None, 10, 20, 30],
+            #     },
+            #     "Gradient Boosting": {
+            #         'learning_rate': [0.1, 0.01, 0.05],
+            #         'n_estimators': [50, 100, 150],
+            #     },
+            #     "Logistic Regression": {
+            #         'C': [0.1, 1, 10],
+            #         'penalty': ['l2'],
+            #         'solver': ['lbfgs', 'liblinear'],
+            #     },
+            #     "XGBClassifier": {
+            #         'learning_rate': [0.1, 0.01, 0.05],
+            #         'n_estimators': [50, 100, 150],
+            #         'max_depth': [3, 5, 7],
+            #     },
+            #     "SVM": {
+            #         'C': [0.1, 1, 10],
+            #         'kernel': ['linear', 'rbf'],
+            #         'gamma': ['scale', 'auto']
+            #     },
+            #     "KNeighbors": {
+            #         'n_neighbors': [3, 5, 7, 9],
+            #         'weights': ['uniform', 'distance']
+            #     },
+            #     "MultinomialNB": {
+            #         'alpha': [0.1, 0.5, 1.0]  
+            #     }
+            # }
+
+            # model_report: dict = evaluate_models(
+            #     X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test,
+            #     models=models, param=params
+            # )
 
             model_report: dict = evaluate_models(
                 X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test,
-                models=models, param=params
+                models=models
             )
 
             # Get the best model based on highest accuracy

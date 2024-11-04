@@ -1,8 +1,10 @@
 import sys
 import os
-from src.exception import CustomException
-from src.logger import logging
-from src.utils import save_object
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from exception import CustomException
+from logger import logging
+from utils import save_object
 from dataclasses import dataclass
 import numpy as np 
 import pandas as pd
@@ -11,6 +13,7 @@ from sklearn.preprocessing import LabelEncoder
 @dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path = os.path.join('artifacts', "label_encoded_data.pkl")
+    class_mapping_file_path = os.path.join('artifacts', "class_mapping.pkl")  # Path for saving class mapping
 
 class DataTransformation:
     def __init__(self):
@@ -19,7 +22,7 @@ class DataTransformation:
 
     def initiate_data_transformation(self, train_path, test_path):
         try:
-            # Load train and test datasets
+
             train_df = pd.read_csv(train_path)
             test_df = pd.read_csv(test_path)
 
@@ -50,9 +53,14 @@ class DataTransformation:
                 obj=self.label_encoder
             )
 
-            # Retrieve class mapping
-            class_mapping = self.label_encoder.classes_
-            logging.info(f"Classes mapping: {class_mapping}")
+            # Retrieve and save class mapping
+            class_mapping = {index: label for index, label in enumerate(self.label_encoder.classes_)}
+            logging.info(f"Class mapping: {class_mapping}")
+
+            save_object(
+                file_path=self.data_transformation_config.class_mapping_file_path,
+                obj=class_mapping
+            )
 
             return (
                 train_arr,
@@ -63,5 +71,3 @@ class DataTransformation:
         
         except Exception as e:
             raise CustomException(e, sys)
-
-
