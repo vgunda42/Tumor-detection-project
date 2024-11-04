@@ -1,9 +1,9 @@
 
-Kidney Stone Prediction Using Urine Analysis
-Project Overview
+**Kidney Stone Prediction Using Urine Analysis**
+**Project Overview**
 This project aims to predict the likelihood of kidney stone formation based on urine analysis data. The dataset contains various features related to urine composition, including specific gravity, pH, osmo, conductivity, urea, and calcium levels. By applying machine learning models, the project predicts whether an individual is at risk for kidney stones.
 
-Dataset
+**Dataset**
 The dataset used consists of 79 specimens with the following features:
 
 gravity: Specific gravity of urine.
@@ -16,7 +16,8 @@ target: Binary label indicating the presence (1) or absence (0) of kidney stones
 Project Structure
 kidney_stone_prediction.ipynb: Jupyter notebook containing all the code, including data preprocessing, exploratory data analysis (EDA), feature engineering, model training, evaluation, and resampling for handling data imbalance.
 README.md: Project description and instructions.
-Requirements
+
+**Requirements**
 To run this project, you will need:
 
 Python 3.x
@@ -28,7 +29,8 @@ matplotlib
 seaborn
 scikit-learn
 imblearn
-Steps in the Project
+
+**Steps in the Project**
 1. Exploratory Data Analysis (EDA)
 Visualized data distributions to understand feature characteristics.
 Checked for any data imbalances in the target variable.
