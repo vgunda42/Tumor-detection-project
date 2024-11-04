@@ -66,7 +66,7 @@ Combined predictions from Logistic Regression, SVM, Random Forest, and Gradient 
 6. Feature Importance
 Feature importance analysis was conducted using the Random Forest model to determine which features contributed most to the prediction.
 
-Results
+**Results**
 Logistic Regression: Achieved an accuracy of ~69% on the test set.
 Support Vector Machine (SVM): Achieved an accuracy of ~63% on the test set.
 Random Forest and Gradient Boosting models showed slight improvements over Logistic Regression.
@@ -74,12 +74,12 @@ The ensemble model combined the strengths of all models, showing comparable perf
 Conclusion
 The project demonstrated the feasibility of predicting kidney stone formation based on urine analysis data using machine learning techniques. Feature engineering and handling data imbalance were essential steps in improving model performance.
 
-Usage
+**Usage**
 To replicate the analysis:
 
 Open kidney_stone_prediction.ipynb in Jupyter Notebook.
 Run each cell sequentially to load the dataset, preprocess the data, train models, and evaluate their performance.
-Future Work
+**Future Work**
 Experiment with larger datasets for improved model performance.
 Explore additional features or advanced feature engineering methods.
 Implement hyperparameter tuning for optimal model configurations.
