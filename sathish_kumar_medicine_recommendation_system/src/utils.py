@@ -3,7 +3,7 @@ import sys
 import pickle
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import GridSearchCV
-from src.exception import CustomException
+from exception import CustomException
 
 def save_object(file_path, obj):
     """Saves an object to a file."""
