@@ -3,6 +3,7 @@
 pip install openpyxl
 pip install --upgrade scikit-learn
 
+
 import pandas as pd
 from sklearn.preprocessing import OrdinalEncoder
 import matplotlib.pyplot as plt
