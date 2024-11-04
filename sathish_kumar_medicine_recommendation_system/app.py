@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, jsonify  # Import jsonify
+from flask import Flask, request, render_template, jsonify  
 import numpy as np
 import pandas as pd
 import pickle
@@ -7,8 +7,6 @@ from src.pipelline.predict_pipeline import helper,get_predicted_value
 
 # flask app
 app = Flask(__name__)
-
-
 
 @app.route("/")
 def index():
@@ -40,27 +38,6 @@ def home():
                                    workout=workout)
 
     return render_template('index.html')
-
-
-
-# # about view funtion and path
-# @app.route('/about')
-# def about():
-#     return render_template("about.html")
-# # contact view funtion and path
-# @app.route('/contact')
-# def contact():
-#     return render_template("contact.html")
-
-# # developer view funtion and path
-# @app.route('/developer')
-# def developer():
-#     return render_template("developer.html")
-
-# # about view funtion and path
-# @app.route('/blog')
-# def blog():
-#     return render_template("blog.html")
 
 
 if __name__ == '__main__':
