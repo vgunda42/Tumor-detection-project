@@ -1,0 +1,10 @@
+pathlib
+tqdm
+torch
+pandas
+numpy
+diffusers
+transformers
+matplotlib
+opencv-python
+accelerate
